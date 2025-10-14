@@ -1,8 +1,8 @@
 import { MongoClient } from "mongodb";
 
-const uri = "mongodb://localhost:27017";
+const uri = process.env.MONGODB_URI;
 const dbName = "mydb";
-const collectionName = "config1";
+const collectionName = "config_db";
 
 export async function GET() {
   const client = new MongoClient(uri);
