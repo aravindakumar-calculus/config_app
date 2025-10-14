@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useThumbnailRenderer } from "./useThumbnailRenderer";
 import { useStore } from "@/store/useStore";
 import * as THREE from "three";
+import Image from "next/image";
 
 export default function DEThumbnailViewer({
   visibleParts,
@@ -21,6 +22,10 @@ export default function DEThumbnailViewer({
   const colorSelected = useStore((s) => s.colorSelected);
   const [imgSrc, setImgSrc] = useState(null);
   const { renderThumbnail, prepareScene } = useThumbnailRenderer();
+
+  // Extract complex dependencies
+  const visiblePartsStr = JSON.stringify(visibleParts);
+  const currentSelectionsStr = JSON.stringify(currentSelections);
 
   useEffect(() => {
     if (!gltfScene) return;
@@ -70,7 +75,7 @@ export default function DEThumbnailViewer({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [
     gltfScene,
-    JSON.stringify(visibleParts),
+    visiblePartsStr,
     renderThumbnail,
     selectedColor,
     colorSelected,
@@ -81,7 +86,7 @@ export default function DEThumbnailViewer({
     isIncompatible,
     incompatChecker,
     targetDO,
-    JSON.stringify(currentSelections),
+    currentSelectionsStr,
     stitchPreviewColor,
     edgePreviewColor,
   ]);
@@ -91,9 +96,11 @@ export default function DEThumbnailViewer({
   }
 
   return (
-    <img
+    <Image
       src={imgSrc}
       alt="thumbnail"
+      width={152}
+      height={152}
       className="w-38 h-38 rounded-full object-contain"
       draggable={false}
       style={{ imageRendering: "auto" }}

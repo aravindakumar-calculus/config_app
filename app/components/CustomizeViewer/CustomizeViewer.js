@@ -83,7 +83,6 @@ export default function CustomizeViewer() {
       setVisibleParts,
       activeLayerPresets,
       incompatChecker,
-      setSelectedTab,
     ]
   );
 

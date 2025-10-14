@@ -36,10 +36,13 @@ export default function Page() {
       .then(setAllModels);
   }, []);
 
+  // Extract complex dependency for useEffect
+  const modelConfig = useStore.getState().modelConfig;
+  const modelUrl = modelConfig?.modelUrl;
+
   useEffect(() => {
-    const modelConfig = useStore.getState().modelConfig;
-    if (allModels.length > 0 && modelConfig?.modelUrl) {
-      const defaultUrl = modelConfig.modelUrl;
+    if (allModels.length > 0 && modelUrl) {
+      const defaultUrl = modelUrl;
       const preloadUrls = allModels
         .map((model) => model.modelUrl)
         .filter((url) => url !== defaultUrl);
@@ -55,7 +58,7 @@ export default function Page() {
         );
       }
     }
-  }, [allModels, useStore.getState().modelConfig?.modelUrl]);
+  }, [allModels, modelUrl]);
 
   return (
     <div className="relative min-h-screen">

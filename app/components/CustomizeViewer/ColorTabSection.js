@@ -4,6 +4,7 @@ import { useStore } from "@/store/useStore";
 import { useThumbnailRenderer } from "../ThumbnailViewer/useThumbnailRenderer";
 import DEThumbnailViewer from "../ThumbnailViewer/DEThumbnailViewer";
 import * as THREE from "three";
+import Image from "next/image";
 
 const PALETTE_COLORS = (selfColor) => [
   { key: "self", label: "Self", color: selfColor },
@@ -112,9 +113,11 @@ export default function ColorTabSection() {
                     colorHex={colorHex}
                   />
                 ) : imgSrc ? (
-                  <img
+                  <Image
                     src={imgSrc}
                     alt={description}
+                    width={80}
+                    height={112}
                     className="w-38 h-38 rounded-full object-cover"
                     draggable={false}
                   />

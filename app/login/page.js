@@ -14,8 +14,8 @@ export default function Page() {
   const router = useRouter();
   const login = useStore((s) => s.login);
 
-  const validuser = "abcd";
-  const validpwd = "123";
+  const validuser = "Calculus_User";
+  const validpwd = "Calculus@123";
 
   const handleLogIn = (e) => {
     e.preventDefault();

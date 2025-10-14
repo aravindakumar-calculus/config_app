@@ -3,6 +3,7 @@
 import { Button } from "./components/ui/button";
 import MainLayout from "./main_layout";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 export default function Home() {
   const router = useRouter();
@@ -31,7 +32,7 @@ export default function Home() {
             models and complete manufacturing tech packs in real-time. Our
             intuitive design tools enable further hyper-customizations to design
             and manufacture any configuration imaginable, from materials and
-            dimensions to hardware and personalization — all with complete
+            dimensions to hardware and personalization &mdash; all with complete
             production specifications generated instantly. Starting with
             handbags, our technology will expand across all apparel and
             accessory categories, transforming the entire fashion industry. From
@@ -47,19 +48,21 @@ export default function Home() {
           <div className="grid md:grid-cols-2 items-center mt-[15px] px-[5%]">
             {/* Left image */}
             <div className="">
-              <img
+              <Image
                 src="/video/pic1.jpg"
                 alt="Benefits"
                 className="max-w-[260px] w-full h-auto rounded-lg"
+                width={260}
+                height={180}
               />
             </div>
             {/* Right: Text */}
             <div>
               <p>
                 This breakthrough fundamentally reconstructs the fashion
-                industry's DNA by enabling brands to design 100x faster, move
-                between collections rapidly without traditional lead times, and
-                offer optional hyper-customization to end customers while
+                industry&apos;s DNA by enabling brands to design 100x faster,
+                move between collections rapidly without traditional lead times,
+                and offer optional hyper-customization to end customers while
                 maintaining both traditional manufacturing workflows, and yet
                 integrate mass-customization for a truly sustainable
                 manufacturing process. Large fashion houses can now test
@@ -77,8 +80,8 @@ export default function Home() {
             combinatorial algorithm that mimics the dual-stranded DNA kinetics
             in biology that creates limitless unique characteristics. In our
             case, that translates to the dual-strands of efficient designing and
-            smart manufacturing — creating virtually infinite unique designs,
-            and information to produce them as efficiently as possible.
+            smart manufacturing &mdash; creating virtually infinite unique
+            designs, and information to produce them as efficiently as possible.
           </p>
           <video
             src="/video/home_vid.mp4"
