@@ -1,0 +1,128 @@
+{
+  "mappings": {
+    "Handle": {
+      "1HAN_DO1_MBOD_GSTD_ASTR_PSTD": {
+        "MED_TRP_1": "1HAN_DO1_MBOD_GSTD_ASTR_PSTD",
+        "MED_TRP_2": "1HAN_DO1_MBOD_GSTD_ASTR_PSTD",
+        "MED_SQR_1": "1HAN_DO1_MBOD_GSTD_ASTR_PSTD",
+        "MED_TRI_1": "1HAN_DO1_MBOD_GSTD_ASTR_PSTD"
+      },
+      "1HAN_DO2_MBOD_GSTD_ASTR_PSTD": {
+        "MED_TRP_1": "1HAN_DO2_MBOD_GSTD_ASTR_PSTD",
+        "MED_TRP_2": "1HAN_DO2_MBOD_GSTD_ASTR_PSTD",
+        "MED_SQR_1": "1HAN_DO2_MBOD_GSTD_ASTR_PSTD",
+        "MED_TRI_1": "1HAN_DO2_MBOD_GSTD_ASTR_PSTD"
+      },
+      "1HAN_DO3_MBOD_GSTD_ASTR_PSTD_TAB": {
+        "MED_TRP_1": "1HAN_DO3_MBOD_GSTD_ASTR_PSTD_TAB",
+        "MED_TRP_2": "1HAN_DO3_MBOD_GSTD_ASTR_PSTD_TAB",
+        "MED_SQR_1": "1HAN_DO3_MBOD_GSTD_ASTR_PSTD_TAB",
+        "MED_TRI_1": "1HAN_DO3_MBOD_GSTD_ASTR_PSTD_TAB"
+      },
+      "1HAN_DO4_MBOD_GSTD_ASTR_PSTD_TAB": {
+        "MED_TRP_1": "1HAN_DO4_MBOD_GSTD_ASTR_PSTD_TAB",
+        "MED_TRP_2": "1HAN_DO4_MBOD_GSTD_ASTR_PSTD_TAB",
+        "MED_SQR_1": "1HAN_DO4_MBOD_GSTD_ASTR_PSTD_TAB",
+        "MED_TRI_1": "1HAN_DO4_MBOD_GSTD_ASTR_PSTD_TAB"
+      },
+      "1HAN_DO5_MBOD_GSTD_ASTR_PSTD_TAB_RSTR": {
+        "MED_TRP_1": "1HAN_DO5_MBOD_GSTD_ASTR_PSTD_TAB_RSTR",
+        "MED_TRP_2": "1HAN_DO5_MBOD_GSTD_ASTR_PSTD_TAB_RSTR",
+        "MED_SQR_1": "1HAN_DO5_MBOD_GSTD_ASTR_PSTD_TAB_RSTR",
+        "MED_TRI_1": null
+      },
+      "1HAN_DO6_MBOD_GSTD_ASTR_PABV": {
+        "MED_TRP_1": "1HAN_DO6_MBOD_GSTD_ASTR_PABV",
+        "MED_TRP_2": "1HAN_DO6_MBOD_GSTD_ASTR_PABV",
+        "MED_SQR_1": "1HAN_DO6_MBOD_GSTD_ASTR_PABV",
+        "MED_TRI_1": null
+      }
+    },
+    "Flap": {
+      "2CLO_DO1_AFULG_LTOP": {
+        "MED_TRP_1": "2CLO_DO1_AFULG_LTOP",
+        "MED_TRP_2": "2CLO_DO1_AFULG_LTOP",
+        "MED_SQR_1": null,
+        "MED_TRI_1": "2CLO_DO1_AFULG_LTOP"
+      },
+      "2CLO_DO2_ACEN_LMID_CSEL": {
+        "MED_TRP_1": "2CLO_DO2_ACEN_LMID_CSEL",
+        "MED_TRP_2": "2CLO_DO2_ACEN_LMID_CSEL",
+        "MED_SQR_1": null,
+        "MED_TRI_1": null
+      },
+      "2CLO_DO3_AFULG": {
+        "MED_TRP_1": "2CLO_DO3_AFULG",
+        "MED_TRP_2": "2CLO_DO3_AFULG",
+        "MED_SQR_1": null,
+        "MED_TRI_1": "2CLO_DO3_AFULG"
+      },
+      "2CLO_DO4_ACEN": {
+        "MED_TRP_1": "2CLO_DO4_ACEN",
+        "MED_TRP_2": "2CLO_DO4_ACEN",
+        "MED_SQR_1": null,
+        "MED_TRI_1": "2CLO_DO4_ACEN"
+      },
+      "2CLO_DO5_ACEN": {
+        "MED_TRP_1": "2CLO_DO5_ACEN",
+        "MED_TRP_2": "2CLO_DO5_ACEN",
+        "MED_SQR_1": null,
+        "MED_TRI_1": "2CLO_DO5_ACEN"
+      },
+      "2CLO_DO6_ACEN": {
+        "MED_TRP_1": "2CLO_DO6_ACEN",
+        "MED_TRP_2": "2CLO_DO6_ACEN",
+        "MED_SQR_1": "2CLO_DO6_ACEN",
+        "MED_TRI_1": "2CLO_DO6_ACEN"
+      },
+      "2CLO_DO7_AGAPS": {
+        "MED_TRP_1": "2CLO_DO7_AGAPS",
+        "MED_TRP_2": "2CLO_DO7_AGAPS",
+        "MED_SQR_1": "2CLO_DO7_AGAPS",
+        "MED_TRI_1": null
+      }
+    },
+    "Front": {
+      "3FRO_DO2_MPLA_DCEN": {
+        "MED_TRP_1": "3FRO_DO2_MPLA_DCEN",
+        "MED_TRP_2": null,
+        "MED_SQR_1": null,
+        "MED_TRI_1": null
+      },
+      "3FRO_DO3_PSTD": {
+        "MED_TRP_1": "3FRO_DO3_PSTD",
+        "MED_TRP_2": "3FRO_DO3_PSTD",
+        "MED_SQR_1": null,
+        "MED_TRI_1": "3FRO_DO3_PSTD"
+      },
+      "3FRO_DO4_PSTD": {
+        "MED_TRP_1": "3FRO_DO4_PSTD",
+        "MED_TRP_2": "3FRO_DO4_PSTD",
+        "MED_SQR_1": null,
+        "MED_TRI_1": "3FRO_DO4_PSTD"
+      },
+      "3FRO_DO5_PRUNS": {
+        "MED_TRP_1": "3FRO_DO5_PRUNS",
+        "MED_TRP_2": "3FRO_DO5_PRUNS",
+        "MED_SQR_1": null,
+        "MED_TRI_1": null
+      },
+      "3FRO_DO6_PRUNS": {
+        "MED_TRP_1": "3FRO_DO6_PRUNS",
+        "MED_TRP_2": "3FRO_DO6_PRUNS",
+        "MED_SQR_1": "3FRO_DO6_PRUNS",
+        "MED_TRI_1": null
+      }
+    }
+  },
+  "defaults": {
+    "Handle": {
+      "1HAN_DO_NO": {
+        "MED_TRP_1": "1HAN_DO_NO",
+        "MED_TRP_2": "1HAN_DO_NO",
+        "MED_SQR_1": "1HAN_DO_NO",
+        "MED_TRI_1": "1HAN_DO_NO"
+      }
+    }
+  }
+}

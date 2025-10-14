@@ -1,0 +1,102 @@
+"use client";
+import React, { useEffect, useState } from "react";
+import { useThumbnailRenderer } from "./useThumbnailRenderer";
+import { useStore } from "@/store/useStore";
+import * as THREE from "three";
+
+export default function DEThumbnailViewer({
+  visibleParts,
+  cameraAngle = "front",
+  currentTab,
+  gltfScene,
+  colorHex,
+  isIncompatible = false,
+  incompatChecker = null,
+  targetDO = null,
+  currentSelections = {},
+  stitchPreviewColor,
+  edgePreviewColor,
+}) {
+  const selectedColor = useStore((s) => s.selectedColor);
+  const colorSelected = useStore((s) => s.colorSelected);
+  const [imgSrc, setImgSrc] = useState(null);
+  const { renderThumbnail, prepareScene } = useThumbnailRenderer();
+
+  useEffect(() => {
+    if (!gltfScene) return;
+
+    const group = prepareScene({
+      baseScene: gltfScene,
+      visibleParts,
+      colorHex:
+        colorHex !== undefined
+          ? colorHex
+          : colorSelected
+          ? selectedColor
+          : null,
+      isIncompatible,
+      incompatChecker,
+      targetDO,
+      currentSelections,
+      stitchPreviewColor,
+      edgePreviewColor,
+    });
+
+    // Camera: front, side, or back
+    const camera = new THREE.PerspectiveCamera(40, 1, 0.1, 100);
+    if (cameraAngle === "side") {
+      if (currentTab === "Rear" || currentTab === "Straps") {
+        camera.position.set(3.7, 0, -4); // right side from the back
+      } else {
+        camera.position.set(-3.7, 0, 4); // side from the front
+      }
+    } else if (cameraAngle === "back") {
+      camera.position.set(0, 0, -5.25);
+    } else {
+      camera.position.set(0, 0, 5.25);
+    }
+    camera.lookAt(0, 0, 0);
+
+    const dpr = window.devicePixelRatio || 1;
+    const size = 152 * dpr;
+
+    renderThumbnail({
+      scene: group,
+      camera,
+      width: size,
+      height: size,
+      format: "image/webp",
+    }).then(setImgSrc);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [
+    gltfScene,
+    JSON.stringify(visibleParts),
+    renderThumbnail,
+    selectedColor,
+    colorSelected,
+    prepareScene,
+    cameraAngle,
+    currentTab,
+    colorHex,
+    isIncompatible,
+    incompatChecker,
+    targetDO,
+    JSON.stringify(currentSelections),
+    stitchPreviewColor,
+    edgePreviewColor,
+  ]);
+
+  if (!imgSrc) {
+    return <div className="w-38 h-38 bg-gray-100 rounded-full" />;
+  }
+
+  return (
+    <img
+      src={imgSrc}
+      alt="thumbnail"
+      className="w-38 h-38 rounded-full object-contain"
+      draggable={false}
+      style={{ imageRendering: "auto" }}
+    />
+  );
+}

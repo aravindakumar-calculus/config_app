@@ -1,0 +1,263 @@
+import { create } from "zustand";
+import { loadGLB } from "@/app/utils/glbCache";
+import { ReferenceMapper } from "@/app/utils/ref_map";
+
+let referenceMatrix = null;
+let referenceMapper = null;
+
+// Fetch and cache the reference matrix
+async function getReferenceMapper() {
+  if (!referenceMatrix) {
+    const res = await fetch("/api/ref_map");
+    referenceMatrix = await res.json();
+    referenceMapper = new ReferenceMapper(referenceMatrix);
+  }
+  return referenceMapper;
+}
+
+export const useStore = create((set, get) => ({
+  selectedModel: null,
+  modelConfig: {},
+
+  setSelectedModel: async (modelName = "MED_TRP_1") => {
+    const currentScene = get().gltfScene;
+    if (currentScene) {
+      currentScene.traverse((child) => {
+        if (child.geometry) child.geometry.dispose();
+        if (child.material) {
+          if (Array.isArray(child.material)) {
+            child.material.forEach((m) => m.dispose && m.dispose());
+          } else {
+            child.material.dispose && child.material.dispose();
+          }
+        }
+      });
+    }
+
+    let config = {};
+    try {
+      const res = await fetch(
+        `/api/config?name=${encodeURIComponent(modelName)}`
+      );
+      config = await res.json();
+    } catch (e) {
+      config = {};
+    }
+
+    const modelUrl = config?.modelUrl || "/models/MED_TRP_1.glb";
+    await loadGLB(
+      modelUrl,
+      "https://www.gstatic.com/draco/versioned/decoders/1.5.7/"
+    );
+
+    // --- Reference Matrix Mapping Logic ---
+    const prevModel = get().selectedModel;
+    const prevPresets = get().activeLayerPresets;
+    let mappedPresets = {};
+    if (prevModel && prevPresets && prevModel !== modelName) {
+      const mapper = await getReferenceMapper();
+      mappedPresets = mapper.mapSelections(prevModel, modelName, prevPresets);
+    }
+
+    const activeLayerPresets = {};
+    if (config.deTabs && config.deOptions) {
+      config.deTabs.forEach((tab) => {
+        if (tab === "Color") return;
+        const options = config.deOptions[tab];
+        if (
+          mappedPresets[tab] &&
+          Array.isArray(options) &&
+          options.includes(mappedPresets[tab])
+        ) {
+          activeLayerPresets[tab] = mappedPresets[tab];
+        } else if (Array.isArray(options) && options.length > 0) {
+          activeLayerPresets[tab] = options[0];
+        }
+      });
+    }
+
+    let selectedMaterial = null;
+    let selectedColor = "#ffffff";
+    let colorSelected = false;
+    if (config.optionDescriptions?.Color) {
+      const colorKeys = Object.keys(config.optionDescriptions.Color);
+      if (colorKeys.length > 0) {
+        selectedMaterial = colorKeys[0];
+        selectedColor = config.colorHex?.[selectedMaterial] || "#ffffff";
+        colorSelected = true;
+      }
+    }
+
+    set({
+      selectedModel: modelName,
+      modelConfig: config,
+      activeLayerPresets,
+      selectedTab: config.deTabs?.[0] || null,
+      selectedDEOption: null,
+      selectedMaterial,
+      selectedColor,
+      colorSelected,
+      productDescription: "",
+    });
+  },
+
+  setModelConfig: (config) => set({ modelConfig: config }),
+  selectedTab: null,
+  selectedDEOption: null,
+  activeLayerPresets: {},
+  isLoggedIn: false,
+  rotationIndex: 0,
+  rotationY: 0,
+  meshNames: [],
+  visibleParts: {},
+  selectedMaterial: null,
+  selectedColor: "#ffffff",
+  colorSelected: false,
+  pendingIndex: null,
+  selectedPreviewIndex: null,
+  gltfScene: null,
+  hbIcon: false,
+  showProducts: false,
+  productDescription: "",
+  selectedStitchColor: "self",
+  selectedEdgepaintColor: "self",
+
+  toggleHbIcon: () => set((s) => ({ hbIcon: !s.hbIcon })),
+  toggleProducts: () => set((s) => ({ showProducts: !s.showProducts })),
+  setRotationIndex: (i) => set({ rotationIndex: i }),
+  setRotationY: (y) => set({ rotationY: y }),
+  login: () => set({ isLoggedIn: true }),
+  logout: () => set({ isLoggedIn: false }),
+  setSelectedStitchColor: (color) => set({ selectedStitchColor: color }),
+  setSelectedEdgepaintColor: (color) => set({ selectedEdgepaintColor: color }),
+
+  setMeshNames: (names) =>
+    set((state) => {
+      const config = state.modelConfig;
+      const layerPresets = config?.layerPresets || {};
+      const activeLayerPresets = state.activeLayerPresets || {};
+      const deTabs = config?.deTabs || [];
+      const deOptions = config?.deOptions || {};
+
+      let visibleSet = new Set();
+
+      deTabs.forEach((de) => {
+        if (de === "Color") return;
+        let opt = activeLayerPresets[de];
+        if (!opt && Array.isArray(deOptions[de]) && deOptions[de].length > 0) {
+          opt = deOptions[de][0];
+        }
+        const presetArr = layerPresets?.[de]?.[opt];
+        if (Array.isArray(presetArr)) {
+          presetArr.forEach((key) => visibleSet.add(key));
+        }
+      });
+
+      if (visibleSet.size === 0) {
+        names.forEach((name) => visibleSet.add(name));
+      }
+
+      const visibleParts = Object.fromEntries(
+        names.map((name) => [name, visibleSet.has(name)])
+      );
+
+      return {
+        meshNames: names,
+        visibleParts,
+      };
+    }),
+
+  setSelectedMaterial: (key) => set({ selectedMaterial: key }),
+  setSelectedColor: (color) => set({ selectedColor: color }),
+  setColorSelected: (val) => set({ colorSelected: val }),
+  setPendingIndex: (i) => set({ pendingIndex: i }),
+  setSelectedPreviewIndex: (i) => set({ selectedPreviewIndex: i }),
+  setGltfScene: (scene) => set({ gltfScene: scene }),
+  setProductDescription: (desc) => set({ productDescription: desc }),
+
+  setSelectedTab: (tab) =>
+    set((state) => {
+      const config = state.modelConfig;
+      const deOptions = config?.deOptions || {};
+      let newActiveLayerPresets = { ...state.activeLayerPresets };
+      if (
+        tab &&
+        tab !== "Color" &&
+        deOptions[tab] &&
+        deOptions[tab].length > 0 &&
+        !newActiveLayerPresets[tab]
+      ) {
+        newActiveLayerPresets[tab] = deOptions[tab][0];
+      }
+      return {
+        selectedTab: tab,
+        selectedDEOption: null,
+        activeLayerPresets: newActiveLayerPresets,
+      };
+    }),
+
+  setSelectedDEOption: (opt) => set({ selectedDEOption: opt }),
+
+  setActiveLayerPreset: (de, opt) =>
+    set((state) => ({
+      activeLayerPresets: {
+        ...state.activeLayerPresets,
+        [de]: opt,
+      },
+      selectedDEOption: opt,
+    })),
+
+  setVisibleParts: (parts) => set({ visibleParts: parts }),
+
+  resetVisibleParts: () =>
+    set((state) => ({
+      visibleParts: state.meshNames.reduce(
+        (acc, name) => ({ ...acc, [name]: true }),
+        {}
+      ),
+    })),
+
+  resetToBB: () =>
+    set((state) => ({
+      visibleParts: state.meshNames.reduce(
+        (acc, name) => ({ ...acc, [name]: true }),
+        {}
+      ),
+      activeLayerPresets: {},
+      selectedTab: null,
+      selectedDEOption: null,
+      selectedMaterial: null,
+      productDescription: "",
+      rotationY: 0,
+      rotationIndex: 0,
+    })),
+
+  computeCombinedVisibility: () => {
+    const { activeLayerPresets, meshNames, modelConfig } = get();
+    const layerPresets = modelConfig?.layerPresets || {};
+    const deTabs = modelConfig?.deTabs || [];
+    const deOptions = modelConfig?.deOptions || {};
+
+    let visibleSet = new Set();
+
+    deTabs.forEach((de) => {
+      if (de === "Color") return;
+      let opt = activeLayerPresets[de];
+      if (!opt && Array.isArray(deOptions[de]) && deOptions[de].length > 0) {
+        opt = deOptions[de][0];
+      }
+      const presetArr = layerPresets?.[de]?.[opt];
+      if (Array.isArray(presetArr)) {
+        presetArr.forEach((key) => visibleSet.add(key));
+      }
+    });
+
+    if (visibleSet.size === 0) {
+      meshNames.forEach((name) => visibleSet.add(name));
+    }
+
+    return Object.fromEntries(
+      meshNames.map((name) => [name, visibleSet.has(name)])
+    );
+  },
+}));
