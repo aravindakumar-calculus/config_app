@@ -81,48 +81,182 @@ export default function CanvasViewer({ controlsRef }) {
             preserveDrawingBuffer: false,
             outputColorSpace: THREE.SRGBColorSpace,
             toneMapping: THREE.ACESFilmicToneMapping,
-            toneMappingExposure: selectedMaterial ? 1.4 : 1.0,
+            toneMappingExposure: 1.4,
           }}
         >
-          {/* Lighting BEFORE color selection */}
-          {!selectedMaterial && (
-            <>
-              <ambientLight intensity={0.6} />
-              {/* Front */}
-              <directionalLight position={[0, 4, 5]} intensity={0.9} />
-              {/* Back */}
-              <directionalLight position={[0, 4, -5]} intensity={0.9} />
-              {/* Left */}
-              <directionalLight position={[-5, 4, 0]} intensity={0.4} />
-              {/* Right */}
-              <directionalLight position={[5, 4, 0]} intensity={0.4} />
-              {/* Bottom */}
-              <directionalLight position={[0, -5, 0]} intensity={0.8} />
-            </>
-          )}
-
           {/* Lighting AFTER color selection */}
           {selectedMaterial && (
             <>
-              <ambientLight intensity={0.6} />
-              <directionalLight position={[0, 4, 5]} intensity={1.4} />
-              {/* Back */}
-              <directionalLight position={[0, 4, -5]} intensity={1.4} />
-              {/* Left */}
-              <directionalLight position={[-5, 4, 0]} intensity={1.0} />
-              {/* Right */}
-              <directionalLight position={[5, 4, 0]} intensity={1.0} />
-              {/* Bottom */}
-              <directionalLight position={[0, -5, 0]} intensity={0.8} />
-              {/* Add targeted light for inside front */}
-              <spotLight
-                position={[0, 2, 3]}
-                angle={0.5}
-                penumbra={0.7}
-                intensity={0.7}
-                castShadow
-                target-position={[0, 0, 0]}
-              />
+              {/* Choose a different lighting setup for dark colors */}
+              {selectedMaterial.toLowerCase() === "color6" ? (
+                <>
+                  {/* Softer, more diffused lighting for dark colors */}
+                  {/* Front */}
+                  <directionalLight position={[0, 0, 5]} intensity={0.08} />
+                  <directionalLight position={[-1, 0, 5]} intensity={0.08} />
+                  <directionalLight position={[-1, 1, 5]} intensity={0.08} />
+                  <directionalLight position={[1, 0, 5]} intensity={0.08} />
+                  <directionalLight position={[1, 1, 5]} intensity={0.08} />
+                  <directionalLight position={[0, 1, 5]} intensity={0.08} />
+
+                  {/* Back */}
+                  <directionalLight position={[0, 0, -5]} intensity={0.08} />
+                  <directionalLight position={[-1, 0, -5]} intensity={0.08} />
+                  <directionalLight position={[-1, 1, -5]} intensity={0.08} />
+                  <directionalLight position={[1, 0, -5]} intensity={0.08} />
+                  <directionalLight position={[1, 1, -5]} intensity={0.08} />
+                  <directionalLight position={[0, 1, -5]} intensity={0.08} />
+
+                  {/* Left */}
+                  <directionalLight position={[-5, 4, 0]} intensity={1.0} />
+
+                  {/* Right */}
+                  <directionalLight position={[5, 4, 0]} intensity={1.0} />
+
+                  {/* Bottom */}
+                  <directionalLight position={[0, -5, 0]} intensity={0.08} />
+
+                  <rectAreaLight
+                    position={[0, 0, 5]}
+                    intensity={1.0}
+                    width={14}
+                    height={14}
+                    color={"white"}
+                    lookAt={[0, 0, 0]}
+                    castShadow={false}
+                  />
+                  {/* RectAreaLight for back */}
+                  <rectAreaLight
+                    position={[0, 0, -5]}
+                    intensity={1.0}
+                    width={14}
+                    height={14}
+                    color={"white"}
+                    rotation={[0, Math.PI, 0]}
+                    castShadow={false}
+                  />
+                  <rectAreaLight
+                    position={[0, -5, 0]}
+                    intensity={1.0}
+                    width={14}
+                    height={14}
+                    color={"white"}
+                    rotation={[Math.PI / 2, 0, 0]} // Faces upward
+                    castShadow={false}
+                  />
+                </>
+              ) : ["color5", "color7", "color9"].includes(
+                  selectedMaterial.toLowerCase()
+                ) ? (
+                <>
+                  {/* Softer, more diffused lighting for dark colors */}
+                  {/* Front */}
+                  <directionalLight position={[0, 0, 5]} intensity={0.08} />
+                  <directionalLight position={[-1, 0, 5]} intensity={0.08} />
+                  <directionalLight position={[-1, 1, 5]} intensity={0.08} />
+                  <directionalLight position={[1, 0, 5]} intensity={0.08} />
+                  <directionalLight position={[1, 1, 5]} intensity={0.08} />
+                  <directionalLight position={[0, 1, 5]} intensity={0.08} />
+
+                  {/* Back */}
+                  <directionalLight position={[0, 0, -5]} intensity={0.08} />
+                  <directionalLight position={[-1, 0, -5]} intensity={0.08} />
+                  <directionalLight position={[-1, 1, -5]} intensity={0.08} />
+                  <directionalLight position={[1, 0, -5]} intensity={0.08} />
+                  <directionalLight position={[1, 1, -5]} intensity={0.08} />
+                  <directionalLight position={[0, 1, -5]} intensity={0.08} />
+
+                  {/* Left */}
+                  <directionalLight position={[-5, 4, 0]} intensity={1.0} />
+
+                  {/* Right */}
+                  <directionalLight position={[5, 4, 0]} intensity={1.0} />
+
+                  {/* Bottom */}
+                  <directionalLight position={[0, -5, 0]} intensity={0.08} />
+
+                  <rectAreaLight
+                    position={[0, 0, 5]}
+                    intensity={1.0}
+                    width={8}
+                    height={8}
+                    color={"white"}
+                    lookAt={[0, 0, 0]}
+                    castShadow={false}
+                  />
+                  {/* RectAreaLight for back */}
+                  <rectAreaLight
+                    position={[0, 0, -5]}
+                    intensity={1.0}
+                    width={8}
+                    height={8}
+                    color={"white"}
+                    rotation={[0, Math.PI, 0]}
+                    castShadow={false}
+                  />
+                  <rectAreaLight
+                    position={[0, -5, 0]}
+                    intensity={1.0}
+                    width={8}
+                    height={8}
+                    color={"white"}
+                    rotation={[Math.PI / 2, 0, 0]} // Faces upward
+                    castShadow={false}
+                  />
+                </>
+              ) : (
+                <>
+                  {/* Default lighting setup */}
+                  {/* Front */}
+                  <directionalLight position={[0, 0, 5]} intensity={0.02} />
+                  <directionalLight position={[-1, 0, 5]} intensity={0.02} />
+                  <directionalLight position={[-1, 1, 5]} intensity={0.02} />
+                  <directionalLight position={[1, 0, 5]} intensity={0.02} />
+                  <directionalLight position={[1, 1, 5]} intensity={0.02} />
+                  <directionalLight position={[0, 1, 5]} intensity={0.02} />
+
+                  {/* Back */}
+                  <directionalLight position={[0, 4, -5]} intensity={0.2} />
+
+                  {/* Left */}
+                  <directionalLight position={[-5, 4, 0]} intensity={1.0} />
+
+                  {/* Right */}
+                  <directionalLight position={[5, 4, 0]} intensity={1.0} />
+
+                  {/* Bottom */}
+                  <directionalLight position={[0, -5, 0]} intensity={0.3} />
+
+                  <rectAreaLight
+                    position={[0, 5, 5]}
+                    intensity={1.0}
+                    width={8}
+                    height={8}
+                    color={"white"}
+                    lookAt={[0, 0, 0]}
+                    castShadow={false}
+                  />
+                  {/* RectAreaLight for back */}
+                  <rectAreaLight
+                    position={[0, 5, -5]}
+                    intensity={1.0}
+                    width={8}
+                    height={8}
+                    color={"white"}
+                    rotation={[0, Math.PI, 0]}
+                    castShadow={false}
+                  />
+                  <rectAreaLight
+                    position={[0, -5, 0]}
+                    intensity={0.5}
+                    width={8}
+                    height={8}
+                    color={"white"}
+                    rotation={[Math.PI / 2, 0, 0]} // Faces upward
+                    castShadow={false}
+                  />
+                </>
+              )}
             </>
           )}
 

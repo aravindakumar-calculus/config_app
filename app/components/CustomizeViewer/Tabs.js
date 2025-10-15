@@ -36,7 +36,7 @@ export default function DETabs() {
           if (isSelected) borderColor = "border-blue-600";
           else if (isActive) borderColor = "border-green-500";
 
-          let tabClass = `w-full px-2 py-1 rounded shadow-sm font-medium transition focus:outline-none border-2 ${borderColor} bg-[#ecebe6] text-black text-sm lg:text-base`;
+          let tabClass = `w-full p-0.5 rounded shadow-sm font-medium transition focus:outline-none border-2 ${borderColor} bg-[#ecebe6] text-black text-sm lg:text-base`;
 
           return (
             <div key={tab} className="flex flex-col items-center flex-1 w-full">
