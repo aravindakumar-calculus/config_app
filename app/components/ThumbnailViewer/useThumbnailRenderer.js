@@ -143,13 +143,19 @@ export function useThumbnailRenderer() {
 
       // Add lights (if not already present)
       if (!clone.getObjectByName("thumbAmbient")) {
-        const ambient = new THREE.AmbientLight(0xffffff, 0.6);
+        const ambient = new THREE.AmbientLight(0xffffff, 1.2);
         ambient.name = "thumbAmbient";
         clone.add(ambient);
       }
       if (!clone.getObjectByName("thumbDirFront")) {
-        const dir = new THREE.DirectionalLight(0xffffff, 1.4);
+        const dir = new THREE.DirectionalLight(0xffffff, 0.5);
         dir.position.set(0, 4, 5);
+        dir.name = "thumbDirFront";
+        clone.add(dir);
+      }
+      if (!clone.getObjectByName("thumbDirFront1")) {
+        const dir = new THREE.DirectionalLight(0xffffff, 0.5);
+        dir.position.set(0, 0, 5);
         dir.name = "thumbDirFront";
         clone.add(dir);
       }
