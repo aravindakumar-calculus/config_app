@@ -3,6 +3,7 @@ import { useStore } from "@/store/useStore";
 import CloudUpload from "./CloudUpload";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPaperPlane, faSpinner } from "@fortawesome/free-solid-svg-icons";
+import Image from "next/image";
 
 export default function ChatBotViewer() {
   const [input, setInput] = useState("");
@@ -119,9 +120,11 @@ export default function ChatBotViewer() {
                     <FontAwesomeIcon icon={faSpinner} spin size="lg" />
                   </div>
                 )}
-                <img
+                <Image
                   src={imageUrl}
                   alt="Uploaded"
+                  width={56}
+                  height={56}
                   className="h-14 w-14 object-cover rounded-lg border border-gray-300 shadow"
                   onLoad={() => setImageLoading(false)}
                   style={imageLoading ? { opacity: 0.5 } : {}}
