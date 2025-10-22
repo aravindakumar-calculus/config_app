@@ -2,25 +2,33 @@ import { create } from "zustand";
 import { loadGLB } from "@/app/utils/glbCache";
 import { ReferenceMapper } from "@/app/utils/ref_map";
 
-let referenceMatrix = null;
-let referenceMapper = null;
+// Remove these globals:
+// let referenceMatrix = null;
+// let referenceMapper = null;
 
+// Updated getReferenceMapper to use Zustand store
 async function getReferenceMapper() {
-  if (!referenceMatrix) {
+  const { refMap, setRefMap } = useStore.getState();
+  if (!refMap) {
     const res = await fetch("/api/ref_map");
-    referenceMatrix = await res.json();
-    referenceMapper = new ReferenceMapper(referenceMatrix);
+    const matrix = await res.json();
+    setRefMap(matrix);
+    return new ReferenceMapper(matrix);
   }
-  return referenceMapper;
+  return new ReferenceMapper(refMap);
 }
 
 export const useStore = create((set, get) => ({
   selectedModel: null,
   modelConfig: {},
-  configLoaded: false, // NEW
+  configLoaded: false,
+
+  // --- NEW: ref map state and setter ---
+  refMap: null,
+  setRefMap: (matrix) => set({ refMap: matrix }),
 
   setSelectedModel: async (modelName = "MED_TRP_1") => {
-    set({ configLoaded: false }); // Reset before loading
+    set({ configLoaded: false });
     const currentScene = get().gltfScene;
     if (currentScene) {
       currentScene.traverse((child) => {
@@ -55,6 +63,7 @@ export const useStore = create((set, get) => ({
     const prevPresets = get().activeLayerPresets;
     let mappedPresets = {};
     if (prevModel && prevPresets && prevModel !== modelName) {
+      // --- Use cached refMap from Zustand ---
       const mapper = await getReferenceMapper();
       mappedPresets = mapper.mapSelections(prevModel, modelName, prevPresets);
     }
@@ -98,10 +107,10 @@ export const useStore = create((set, get) => ({
       selectedColor,
       colorSelected,
       productDescription: "",
-      configLoaded: true, // SET TRUE after config is loaded
+      incompatibilityRules: null,
+      configLoaded: true,
     });
 
-    // Update visible parts after model config is loaded
     set((state) => ({
       visibleParts: state.computeCombinedVisibility(),
     }));
@@ -138,6 +147,7 @@ export const useStore = create((set, get) => ({
   logout: () => set({ isLoggedIn: false }),
   setSelectedStitchColor: (color) => set({ selectedStitchColor: color }),
   setSelectedEdgepaintColor: (color) => set({ selectedEdgepaintColor: color }),
+  setIncompatibilityRules: (rules) => set({ incompatibilityRules: rules }),
 
   setMeshNames: (names) =>
     set((state) => {
@@ -206,7 +216,6 @@ export const useStore = create((set, get) => ({
 
   setSelectedDEOption: (opt) => set({ selectedDEOption: opt }),
 
-  // --- UPDATED: Always recompute visibleParts after preset change ---
   setActiveLayerPreset: (de, opt) =>
     set((state) => {
       const newPresets = {
@@ -309,3 +318,6 @@ export const useStore = create((set, get) => ({
       : {};
   },
 }));
+
+// Export getReferenceMapper for use in other files
+export { getReferenceMapper };
