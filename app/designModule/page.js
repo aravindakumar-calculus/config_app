@@ -48,10 +48,10 @@ export default function Page() {
         .filter((url) => url !== defaultUrl);
 
       if (preloadUrls.length > 0) {
-        console.log(
-          "[GLB] Throttled lazy loading models (in order):",
-          preloadUrls
-        );
+        // console.log(
+        //   "[GLB] Throttled lazy loading models (in order):",
+        //   preloadUrls
+        // );
         preloadGLBsInOrder(
           preloadUrls,
           "https://www.gstatic.com/draco/versioned/decoders/1.5.7/"

@@ -2,7 +2,7 @@ import { MongoClient } from "mongodb";
 
 const uri = process.env.MONGODB_URI;
 const dbName = "mydb";
-const collectionName = "config_db";
+const collectionName = "incompatible_rules";
 
 export async function GET() {
   const client = new MongoClient(uri);

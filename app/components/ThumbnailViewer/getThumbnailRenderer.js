@@ -14,7 +14,7 @@ export function getThumbnailRenderer(width = 152, height = 152) {
     thumbnailRenderer = null;
   }
   if (!thumbnailRenderer) {
-    console.log("[THUMBNAIL] Creating new thumbnail renderer");
+    //console.log("[THUMBNAIL] Creating new thumbnail renderer");
     thumbnailRenderer = new THREE.WebGLRenderer({
       antialias: true,
       preserveDrawingBuffer: true,
@@ -37,7 +37,7 @@ export function getThumbnailRenderer(width = 152, height = 152) {
     thumbnailRenderer.domElement.addEventListener(
       "webglcontextrestored",
       () => {
-        console.log("[THUMBNAIL] WebGL context restored");
+        //console.log("[THUMBNAIL] WebGL context restored");
       }
     );
   }
@@ -47,7 +47,7 @@ export function getThumbnailRenderer(width = 152, height = 152) {
 
 export function disposeThumbnailRenderer() {
   if (thumbnailRenderer) {
-    console.log("[THUMBNAIL] Disposing thumbnail renderer");
+    //console.log("[THUMBNAIL] Disposing thumbnail renderer");
     thumbnailRenderer.dispose();
     if (thumbnailRenderer.domElement.parentNode) {
       thumbnailRenderer.domElement.parentNode.removeChild(

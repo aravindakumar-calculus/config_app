@@ -2,7 +2,7 @@ import { MongoClient } from "mongodb";
 
 const uri = process.env.MONGODB_URI;
 const dbName = "mydb";
-const collectionName = "config_db";
+const collectionName = "ref_map";
 
 export async function GET() {
   const client = new MongoClient(uri);

@@ -5,7 +5,6 @@ import { ReferenceMapper } from "@/app/utils/ref_map";
 let referenceMatrix = null;
 let referenceMapper = null;
 
-// Fetch and cache the reference matrix
 async function getReferenceMapper() {
   if (!referenceMatrix) {
     const res = await fetch("/api/ref_map");
@@ -18,8 +17,10 @@ async function getReferenceMapper() {
 export const useStore = create((set, get) => ({
   selectedModel: null,
   modelConfig: {},
+  configLoaded: false, // NEW
 
   setSelectedModel: async (modelName = "MED_TRP_1") => {
+    set({ configLoaded: false }); // Reset before loading
     const currentScene = get().gltfScene;
     if (currentScene) {
       currentScene.traverse((child) => {
@@ -50,7 +51,6 @@ export const useStore = create((set, get) => ({
       "https://www.gstatic.com/draco/versioned/decoders/1.5.7/"
     );
 
-    // --- Reference Matrix Mapping Logic ---
     const prevModel = get().selectedModel;
     const prevPresets = get().activeLayerPresets;
     let mappedPresets = {};
@@ -98,8 +98,16 @@ export const useStore = create((set, get) => ({
       selectedColor,
       colorSelected,
       productDescription: "",
+      configLoaded: true, // SET TRUE after config is loaded
     });
+
+    // Update visible parts after model config is loaded
+    set((state) => ({
+      visibleParts: state.computeCombinedVisibility(),
+    }));
   },
+
+  resetConfigLoaded: () => set({ configLoaded: false }),
 
   setModelConfig: (config) => set({ modelConfig: config }),
   selectedTab: null,
@@ -119,8 +127,8 @@ export const useStore = create((set, get) => ({
   hbIcon: false,
   showProducts: false,
   productDescription: "",
-  selectedStitchColor: "self",
-  selectedEdgepaintColor: "self",
+  selectedStitchColor: "black",
+  selectedEdgepaintColor: "black",
 
   toggleHbIcon: () => set((s) => ({ hbIcon: !s.hbIcon })),
   toggleProducts: () => set((s) => ({ showProducts: !s.showProducts })),
@@ -198,14 +206,52 @@ export const useStore = create((set, get) => ({
 
   setSelectedDEOption: (opt) => set({ selectedDEOption: opt }),
 
+  // --- UPDATED: Always recompute visibleParts after preset change ---
   setActiveLayerPreset: (de, opt) =>
-    set((state) => ({
-      activeLayerPresets: {
+    set((state) => {
+      const newPresets = {
         ...state.activeLayerPresets,
         [de]: opt,
-      },
-      selectedDEOption: opt,
-    })),
+      };
+      const { meshNames, modelConfig } = state;
+      const layerPresets = modelConfig?.layerPresets || {};
+      const deTabs = modelConfig?.deTabs || [];
+      const deOptions = modelConfig?.deOptions || {};
+
+      let visibleSet = new Set();
+
+      deTabs.forEach((tab) => {
+        if (tab === "Color") return;
+        let selectedOpt = newPresets[tab];
+        if (
+          !selectedOpt &&
+          Array.isArray(deOptions[tab]) &&
+          deOptions[tab].length > 0
+        ) {
+          selectedOpt = deOptions[tab][0];
+        }
+        const presetArr = layerPresets?.[tab]?.[selectedOpt];
+        if (Array.isArray(presetArr)) {
+          presetArr.forEach((name) => visibleSet.add(name));
+        }
+      });
+
+      if (visibleSet.size === 0 && meshNames) {
+        meshNames.forEach((name) => visibleSet.add(name));
+      }
+
+      const visibleParts = meshNames
+        ? Object.fromEntries(
+            meshNames.map((name) => [name, visibleSet.has(name)])
+          )
+        : {};
+
+      return {
+        activeLayerPresets: newPresets,
+        selectedDEOption: opt,
+        visibleParts,
+      };
+    }),
 
   setVisibleParts: (parts) => set({ visibleParts: parts }),
 
@@ -252,12 +298,14 @@ export const useStore = create((set, get) => ({
       }
     });
 
-    if (visibleSet.size === 0) {
+    if (visibleSet.size === 0 && meshNames) {
       meshNames.forEach((name) => visibleSet.add(name));
     }
 
-    return Object.fromEntries(
-      meshNames.map((name) => [name, visibleSet.has(name)])
-    );
+    return meshNames
+      ? Object.fromEntries(
+          meshNames.map((name) => [name, visibleSet.has(name)])
+        )
+      : {};
   },
 }));

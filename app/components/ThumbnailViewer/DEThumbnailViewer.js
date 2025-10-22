@@ -101,7 +101,7 @@ export default function DEThumbnailViewer({
       alt="thumbnail"
       width={152}
       height={152}
-      className="w-38 h-38 rounded-full object-contain"
+      className="rounded-full object-contain"
       draggable={false}
       style={{ imageRendering: "auto" }}
     />

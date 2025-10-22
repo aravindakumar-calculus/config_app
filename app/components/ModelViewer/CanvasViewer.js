@@ -11,12 +11,12 @@ import * as THREE from "three";
 export default function CanvasViewer({ controlsRef }) {
   const [modelLoaded, setModelLoaded] = useState(false);
 
-  useEffect(() => {
-    console.log("[MAIN CANVAS] CanvasViewer mounted");
-    return () => {
-      console.log("[MAIN CANVAS] CanvasViewer unmounted");
-    };
-  }, []);
+  // useEffect(() => {
+  //   console.log("[MAIN CANVAS] CanvasViewer mounted");
+  //   return () => {
+  //     console.log("[MAIN CANVAS] CanvasViewer unmounted");
+  //   };
+  // }, []);
 
   useEffect(() => {
     if (modelLoaded) {
