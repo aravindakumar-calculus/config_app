@@ -1,0 +1,384 @@
+[
+  {
+    "model_code": "MED_TRP_4",
+    "do_code": "Style06_TRP_WSTD_GANG",
+    "pieces": [
+      {
+        "name": "Style06_TRP_WSTD_GANG",
+        "png_urls": [
+          "https://res.cloudinary.com/dtan5djei/image/upload/v1761741077/png/TRP_4/Style06_TRP_WSTD_GANG.png"
+        ]
+      }
+    ]
+  },
+  {
+    "model_code": "MED_TRP_4",
+    "do_code": "Handle00",
+    "pieces": [
+      {
+        "name": "Handle00",
+        "png_urls": []
+      }
+    ]
+  },
+  {
+    "model_code": "MED_TRP_4",
+    "do_code": "Handle09_MBOD_GWID_AANG_PHIG_NT",
+    "pieces": [
+      {
+        "name": "Handle09_MBOD_GWID_AANG_PHIG_NT",
+        "png_urls": [
+          "https://res.cloudinary.com/dtan5djei/image/upload/v1761742799/png/TRP_4/Handle09_MBOD_GWID_AANG_PHIG_NT.png"
+        ]
+      }
+    ]
+  },
+  {
+    "model_code": "MED_TRP_4",
+    "do_code": "Handle10_MBOD_GWID_AANG_PHIG_NT",
+    "pieces": [
+      {
+        "name": "Handle10_MBOD_GWID_AANG_PHIG_NT",
+        "png_urls": [
+          "https://res.cloudinary.com/dtan5djei/image/upload/v1761741007/png/TRP_4/Handle10_MBOD_GWID_AANG_PHIG_NT.png"
+        ]
+      }
+    ]
+  },
+  {
+    "model_code": "MED_TRP_4",
+    "do_code": "Handle11_MBOD_GWID_AANG_PSTD_HW",
+    "pieces": [
+      {
+        "name": "Handle11_MBOD_GWID_AANG_PSTD_HW",
+        "png_urls": [
+          "https://res.cloudinary.com/dtan5djei/image/upload/v1761741010/png/TRP_4/Handle11_MBOD_GWID_AANG_PSTD_HW.png"
+        ]
+      }
+    ]
+  },
+  {
+    "model_code": "MED_TRP_4",
+    "do_code": "Handle12_MBOD_GWID_AANG_PSTD_HW",
+    "pieces": [
+      {
+        "name": "Handle12_MBOD_GWID_AANG_PSTD_HW",
+        "png_urls": [
+          "https://res.cloudinary.com/dtan5djei/image/upload/v1761743089/png/TRP_4/Handle12_MBOD_GWID_AANG_PSTD_HW.png"
+        ]
+      }
+    ]
+  },
+  {
+    "model_code": "MED_TRP_4",
+    "do_code": "Handle13_MBOD_GWID_AANG_PSTD_HW_RSTR",
+    "pieces": [
+      {
+        "name": "Handle13_MBOD_GWID_AANG_PSTD_HW_RSTR",
+        "png_urls": [
+          [
+            "https://res.cloudinary.com/dtan5djei/image/upload/v1761741066/png/TRP_4/Handle13_MBOD_GWID_AANG_PSTD_HW_RSTR.png"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "model_code": "MED_TRP_4",
+    "do_code": "Handle06_MBOD_GSTD_ASTR_PABV",
+    "pieces": [
+      {
+        "name": "Handle06_MBOD_GSTD_ASTR_PABV",
+        "png_urls": [
+          [
+            "https://res.cloudinary.com/dtan5djei/image/upload/v1761741005/png/TRP_4/Handle06_MBOD_GSTD_ASTR_PABV.png"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "model_code": "MED_TRP_4",
+    "do_code": "Handle15_MBOD_GWID_AANG_PABV_RSTR",
+    "pieces": [
+      {
+        "name": "Handle15_MBOD_GWID_AANG_PABV_RSTR",
+        "png_urls": [
+          [
+            "https://res.cloudinary.com/dtan5djei/image/upload/v1761741066/png/TRP_4/Handle15_MBOD_GWID_AANG_PABV_RSTR.png"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "model_code": "MED_TRP_4",
+    "do_code": "Closure00",
+    "pieces": [
+      {
+        "name": "Closure00",
+        "png_urls": []
+      }
+    ]
+  },
+  {
+    "model_code": "MED_TRP_4",
+    "do_code": "Closure01_WINH",
+    "pieces": [
+      {
+        "name": "Closure01_WINH",
+        "png_urls": [
+          "https://res.cloudinary.com/dtan5djei/image/upload/v1761740993/png/TRP_4/Closure01_WINH.png"
+        ]
+      }
+    ]
+  },
+  {
+    "model_code": "MED_TRP_4",
+    "do_code": "Closure02_CEN",
+    "pieces": [
+      {
+        "name": "Closure02_CEN",
+        "png_urls": [
+          "https://res.cloudinary.com/dtan5djei/image/upload/v1761740994/png/TRP_4/Closure02_CEN.png"
+        ]
+      }
+    ]
+  },
+  {
+    "model_code": "MED_TRP_4",
+    "do_code": "Closure03_WINH",
+    "pieces": [
+      {
+        "name": "Closure03_WINH",
+        "png_urls": [
+          "https://res.cloudinary.com/dtan5djei/image/upload/v1761740994/png/TRP_4/Closure03_WINH.png"
+        ]
+      }
+    ]
+  },
+  {
+    "model_code": "MED_TRP_4",
+    "do_code": "Closure04_CEN",
+    "pieces": [
+      {
+        "name": "Closure04_CEN",
+        "png_urls": [
+          "https://res.cloudinary.com/dtan5djei/image/upload/v1761740994/png/TRP_4/Closure04_CEN.png"
+        ]
+      }
+    ]
+  },
+  {
+    "model_code": "MED_TRP_4",
+    "do_code": "Closure05_CEN",
+    "pieces": [
+      {
+        "name": "Closure05_CEN",
+        "png_urls": [
+          "https://res.cloudinary.com/dtan5djei/image/upload/v1761740994/png/TRP_4/Closure05_CEN.png"
+        ]
+      }
+    ]
+  },
+  {
+    "model_code": "MED_TRP_4",
+    "do_code": "Closure06_CEN",
+    "pieces": [
+      {
+        "name": "Closure06_CEN",
+        "png_urls": [
+          "https://res.cloudinary.com/dtan5djei/image/upload/v1761740994/png/TRP_4/Closure06_CEN.png"
+        ]
+      }
+    ]
+  },
+  {
+    "model_code": "MED_TRP_4",
+    "do_code": "FrontD00",
+    "pieces": [
+      {
+        "name": "FrontD00",
+        "png_urls": []
+      }
+    ]
+  },
+  {
+    "model_code": "MED_TRP_4",
+    "do_code": "FrontD04_HOR_BOT",
+    "pieces": [
+      {
+        "name": "FrontD04_HOR_BOT",
+        "png_urls": [
+          "https://res.cloudinary.com/dtan5djei/image/upload/v1761741002/png/TRP_4/FrontD04_HOR_BOT.png"
+        ]
+      }
+    ]
+  },
+  {
+    "model_code": "MED_TRP_4",
+    "do_code": "FrontD07_HOR_BOT_THIN",
+    "pieces": [
+      {
+        "name": "FrontD07_HOR_BOT_THIN",
+        "png_urls": [
+          "https://res.cloudinary.com/dtan5djei/image/upload/v1761741002/png/TRP_4/FrontD07_HOR_BOT_THIN.png"
+        ]
+      }
+    ]
+  },
+  {
+    "model_code": "MED_TRP_4",
+    "do_code": "FrontU00",
+    "pieces": [
+      {
+        "name": "FrontU00",
+        "png_urls": []
+      }
+    ]
+  },
+  {
+    "model_code": "MED_TRP_4",
+    "do_code": "FrontU02_TPAT_WSTD_SBOT_OMID",
+    "pieces": [
+      {
+        "name": "FrontU02_TPAT_WSTD_SBOT_OMID",
+        "png_urls": [
+          "https://res.cloudinary.com/dtan5djei/image/upload/v1761741003/png/TRP_4/FrontU02_TPAT_WSTD_SBOT_OMID.png"
+        ]
+      }
+    ]
+  },
+  {
+    "model_code": "MED_TRP_4",
+    "do_code": "FrontU03_TFLA_WSTD_SBOT_OMID",
+    "pieces": [
+      {
+        "name": "FrontU03_TFLA_WSTD_SBOT_OMID",
+        "png_urls": [
+          "https://res.cloudinary.com/dtan5djei/image/upload/v1761741003/png/TRP_4/FrontU03_TFLA_WSTD_SBOT_OMID.png"
+        ]
+      }
+    ]
+  },
+  {
+    "model_code": "MED_TRP_4",
+    "do_code": "FrontU09_TPAT_GUS",
+    "pieces": [
+      {
+        "name": "FrontU09_TPAT_GUS",
+        "png_urls": [
+          "https://res.cloudinary.com/dtan5djei/image/upload/v1761741004/png/TRP_4/FrontU09_TPAT_GUS.png"
+        ]
+      }
+    ]
+  },
+  {
+    "model_code": "MED_TRP_4",
+    "do_code": "Strap00",
+    "pieces": [
+      {
+        "name": "Strap00",
+        "png_urls": []
+      }
+    ]
+  },
+  {
+    "model_code": "MED_TRP_4",
+    "do_code": "Strap01_WWID",
+    "pieces": [
+      {
+        "name": "Strap01_WWID",
+        "png_urls": [
+          "https://res.cloudinary.com/dtan5djei/image/upload/v1761741067/png/TRP_4/Strap01_WWID.png"
+        ]
+      }
+    ]
+  },
+  {
+    "model_code": "MED_TRP_4",
+    "do_code": "Strap02_WSTD",
+    "pieces": [
+      {
+        "name": "Strap02_WSTD",
+        "png_urls": [
+          "https://res.cloudinary.com/dtan5djei/image/upload/v1761741069/png/TRP_4/Strap02_WSTD.png"
+        ]
+      }
+    ]
+  },
+  {
+    "model_code": "MED_TRP_4",
+    "do_code": "Rear00",
+    "pieces": [
+      {
+        "name": "Rear00",
+        "png_urls": []
+      }
+    ]
+  },
+  {
+    "model_code": "MED_TRP_4",
+    "do_code": "Rear03_LUGSTD",
+    "pieces": [
+      {
+        "name": "Rear03_LUGSTD",
+        "png_urls": [
+          "https://res.cloudinary.com/dtan5djei/image/upload/v1761741066/png/TRP_4/Rear03_LUGSTD.png"
+        ]
+      }
+    ]
+  },
+  {
+    "model_code": "MED_TRP_4",
+    "do_code": "Rear04_LUGWPAN",
+    "pieces": [
+      {
+        "name": "Rear04_LUGWPAN",
+        "png_urls": [
+          "https://res.cloudinary.com/dtan5djei/image/upload/v1761741066/png/TRP_4/Rear04_LUGWPAN.png"
+        ]
+      }
+    ]
+  },
+  {
+    "model_code": "MED_TRP_4",
+    "do_code": "Add00",
+    "pieces": [
+      {
+        "name": "Add00",
+        "png_urls": []
+      }
+    ]
+  },
+  {
+    "model_code": "MED_TRP_4",
+    "do_code": "Add01_TABRIV",
+    "pieces": [
+      {
+        "name": "Add01_TABRIV",
+        "png_urls": []
+      }
+    ]
+  },
+  {
+    "model_code": "MED_TRP_4",
+    "do_code": "Add02_CHASTR",
+    "pieces": [
+      {
+        "name": "Add02_CHASTR",
+        "png_urls": []
+      }
+    ]
+  },
+  {
+    "model_code": "MED_TRP_4",
+    "do_code": "Add03_FEET",
+    "pieces": [
+      {
+        "name": "Add03_FEET",
+        "png_urls": []
+      }
+    ]
+  }
+]
