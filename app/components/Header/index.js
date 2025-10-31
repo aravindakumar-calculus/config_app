@@ -19,44 +19,49 @@ export default function Header() {
   // Determine active page
   const isDesign = pathname === "/designmodule";
   const isProd = pathname === "/productionmodule";
+  const isHome = pathname === "/";
 
   return (
     <nav className="bg-white px-8 py-4 shadow flex items-center border-1 border-gray-300">
       {/* Left: Design Module Button */}
       <div className="flex items-center basis-1/4">
-        <button
-          className={`px-4 py-2 rounded-lg font-medium mr-2 ${
-            isDesign
-              ? "bg-gray-300 text-gray-500 cursor-not-allowed"
-              : "bg-blue-600 text-white hover:bg-blue-700"
-          }`}
-          disabled={isDesign}
-          onClick={() => !isDesign && router.push("/designmodule")}
-        >
-          Design Module
-        </button>
+        {!isHome && (
+          <button
+            className={`px-4 py-2 rounded-lg font-medium mr-2 ${
+              isDesign
+                ? "bg-gray-300 text-gray-500 cursor-not-allowed"
+                : "bg-blue-600 text-white hover:bg-blue-700"
+            }`}
+            disabled={isDesign}
+            onClick={() => !isDesign && router.push("/designmodule")}
+          >
+            Design Module
+          </button>
+        )}
       </div>
       {/* Center: Logo */}
       <div className="flex-1 flex justify-center">
         <Link href="/" className="flex items-center space-x-2">
           <span className="font-bold text-4xl tracking-widest font-sans text-black">
-            CALCULUS DEMO
+            CALCULUS
           </span>
         </Link>
       </div>
       {/* Right: Production Module Button & Logout */}
       <div className="flex items-center space-x-4 justify-end basis-1/4">
-        <button
-          className={`px-4 py-2 rounded-lg font-medium ${
-            isProd
-              ? "bg-gray-300 text-gray-500 cursor-not-allowed"
-              : "bg-blue-600 text-white hover:bg-blue-700"
-          }`}
-          disabled={isProd}
-          onClick={() => !isProd && router.push("/productionmodule")}
-        >
-          Production Module
-        </button>
+        {!isHome && (
+          <button
+            className={`px-4 py-2 rounded-lg font-medium ${
+              isProd
+                ? "bg-gray-300 text-gray-500 cursor-not-allowed"
+                : "bg-blue-600 text-white hover:bg-blue-700"
+            }`}
+            disabled={isProd}
+            onClick={() => !isProd && router.push("/productionmodule")}
+          >
+            Production Module
+          </button>
+        )}
         {isLoggedIn && (
           <button
             onClick={handleLogout}

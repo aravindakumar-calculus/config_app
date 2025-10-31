@@ -110,20 +110,24 @@ export default function ModelDownload() {
   }
 
   return (
-    <div className="w-[28%] h-[80%] p-4 bg-white border border-gray-300 rounded-lg shadow-sm flex flex-col items-center">
-      <h2 className="font-bold mb-2">3D Model Snapshot</h2>
-      <div className="mb-4">
-        <DEThumbnailViewer
-          visibleParts={visibleParts}
-          cameraAngle="front"
-          currentTab="Style"
-          gltfScene={gltfScene}
-          width={400}
-          height={400}
-        />
+    <div className="w-[28%] h-[80%] p-4 bg-white border border-gray-300 rounded-lg shadow-sm flex flex-col">
+      <h2 className="font-bold mb-2 text-[16px] text-center">3D Model</h2>
+      <div className="flex-1 flex flex-col justify-center overflow-y-auto">
+        <div className="mb-4 flex items-center justify-center w-full">
+          <div className="w-[260px] h-[260px] sm:w-[320px] sm:h-[320px] xl:w-[400px] xl:h-[400px]">
+            <DEThumbnailViewer
+              visibleParts={visibleParts}
+              cameraAngle="front"
+              currentTab="Style"
+              gltfScene={gltfScene}
+              width={400}
+              height={400}
+            />
+          </div>
+        </div>
       </div>
       <button
-        className="mt-2 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+        className="mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
         onClick={handleDownloadGLTF}
         disabled={
           downloading ||
@@ -132,7 +136,7 @@ export default function ModelDownload() {
           typeof gltfScene.traverse !== "function"
         }
       >
-        {downloading ? "Downloading..." : "Download 3D Model (.gltf)"}
+        {downloading ? "Downloading (GLB)..." : "Download (GLB)"}
       </button>
     </div>
   );

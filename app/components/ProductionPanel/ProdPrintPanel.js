@@ -59,39 +59,39 @@ export default function ProdPrintPanel() {
 
   return (
     <div className="w-[28%] h-[80%] p-4 bg-white border border-gray-300 rounded-lg shadow-sm flex flex-col">
-      <h2 className="font-bold mb-2">DXF Files Download</h2>
-
-      <h2 className="font-bold mt-6 mb-2">Master PNG Preview</h2>
-      {previewLoading ? (
-        <div>Loading preview...</div>
-      ) : previewUrl ? (
-        <div
-          style={{
-            maxHeight: "70vh",
-            overflowY: "auto",
-            border: "1px solid #eee",
-            background: "#fff",
-            padding: 8,
-          }}
-        >
-          <Image
-            src={previewUrl}
-            alt="Master PNG Preview"
-            width={800} // set an appropriate width
-            height={600} // set an appropriate height
+      <h2 className="font-bold mb-2 text-[16px] text-center">
+        DXF Files Download
+      </h2>
+      <div className="flex-1 overflow-y-auto">
+        {previewLoading ? (
+          <div>Loading preview...</div>
+        ) : previewUrl ? (
+          <div
             style={{
-              width: "100%",
+              maxHeight: "70vh",
+              border: "1px solid #eee",
               background: "#fff",
-              display: "block",
-              height: "auto",
+              padding: 8,
             }}
-            unoptimized // since previewUrl is a blob, you need this
-          />
-        </div>
-      ) : (
-        <div>No preview available. Select all design options.</div>
-      )}
-
+          >
+            <Image
+              src={previewUrl}
+              alt="Master PNG Preview"
+              width={800}
+              height={600}
+              style={{
+                width: "100%",
+                background: "#fff",
+                display: "block",
+                height: "auto",
+              }}
+              unoptimized
+            />
+          </div>
+        ) : (
+          <div>No preview available. Select all design options.</div>
+        )}
+      </div>
       <button
         className="mt-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
         onClick={handleDownload}
