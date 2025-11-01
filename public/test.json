@@ -1,384 +1,216 @@
-[
-  {
-    "model_code": "MED_TRP_4",
-    "do_code": "Style06_TRP_WSTD_GANG",
-    "pieces": [
-      {
-        "name": "Style06_TRP_WSTD_GANG",
-        "dxf_urls": [
-          "https://res.cloudinary.com/dtan5djei/raw/upload/v1761722507/dxf/TRP_4/Style06_TRP_WSTD_GANG.dxf"
-        ]
-      }
-    ]
+{
+  "_id": {
+    "$oid": "68ee098c7bdef369b622b8bb"
   },
-  {
-    "model_code": "MED_TRP_4",
-    "do_code": "Handle00",
-    "pieces": [
-      {
-        "name": "Handle00",
-        "dxf_urls": []
-      }
-    ]
+  "name": "MED_TRP_4",
+  "modelUrl": "/models/MED_TRP_4.glb",
+  "deOptions": {
+    "Style": ["Style06_TRP_WSTD_GANG"],
+    "Handle": [
+      "Handle00",
+      "Handle09_MBOD_GWID_AANG_PHIG_NT",
+      "Handle10_MBOD_GWID_AANG_PHIG_NT",
+      "Handle11_MBOD_GWID_AANG_PSTD_HW",
+      "Handle12_MBOD_GWID_AANG_PSTD_HW",
+      "Handle13_MBOD_GWID_AANG_PSTD_HW_RSTR",
+      "Handle06_MBOD_GSTD_ASTR_PABV",
+      "Handle15_MBOD_GWID_AANG_PABV_RSTR"
+    ],
+    "Flap": [
+      "Closure00",
+      "Closure01_WINH",
+      "Closure02_CEN",
+      "Closure03_WINH",
+      "Closure04_CEN",
+      "Closure05_CEN",
+      "Closure06_CEN"
+    ],
+    "Front Decor": ["FrontD00", "FrontD07_HOR_BOT_THIN", "FrontD04_HOR_BOT"],
+    "Front Utility": [
+      "FrontU00",
+      "FrontU02_TPAT_WSTD_SBOT_OMID",
+      "FrontU03_TFLA_WSTD_SBOT_OMID",
+      "FrontU09_TPAT_GUS"
+    ],
+    "Straps": ["Strap00", "Strap01_WWID", "Strap02_WSTD"],
+    "Rear": ["Rear00", "Rear03_LUGSTD", "Rear04_LUGWPAN"],
+    "Add-ons": ["Add00", "Add01_TABRIV", "Add02_CHASTR", "Add03_FEET"]
   },
-  {
-    "model_code": "MED_TRP_4",
-    "do_code": "Handle09_MBOD_GWID_AANG_PHIG_NT",
-    "pieces": [
-      {
-        "name": "Handle09_MBOD_GWID_AANG_PHIG_NT",
-        "dxf_urls": [
-          "https://res.cloudinary.com/dtan5djei/raw/upload/v1761742676/dxf/TRP_4/Handle09_MBOD_GWID_AANG_PHIG_NT.dxf"
-        ]
-      }
-    ]
+  "optionDescriptions": {
+    "DE1": {
+      "DE1-C1": "DE1-C1XYZ",
+      "DE1-C2": "DE1-C2XYZ",
+      "DE1-C3": "DE1-C3XYZ"
+    },
+    "DE2": {
+      "DE2-C1": "DE2-C1XYZ",
+      "DE2-C2": "DE2-C2XYZ",
+      "DE2-C3": "DE2-C3XYZ"
+    },
+    "DE3": {
+      "DE3-C1": "DE3-C1XYZ",
+      "DE3-C2": "DE3-C2XYZ",
+      "DE3-C3": "DE3-C3XYZ"
+    },
+    "Color": {
+      "Color1": "Off-White / Ivory",
+      "Color2": "Chestnut Brown",
+      "Color3": "Tan / Camel",
+      "Color4": "Burgundy / Oxblood",
+      "Color5": "Olive / Moss Green",
+      "Color6": "Navy Blue"
+    }
   },
-  {
-    "model_code": "MED_TRP_4",
-    "do_code": "Handle10_MBOD_GWID_AANG_PHIG_NT",
-    "pieces": [
-      {
-        "name": "Handle10_MBOD_GWID_AANG_PHIG_NT",
-        "dxf_urls": [
-          "https://res.cloudinary.com/dtan5djei/raw/upload/v1761722497/dxf/TRP_4/Handle10_MBOD_GWID_AANG_PHIG_NT.dxf"
-        ]
-      }
-    ]
-  },
-  {
-    "model_code": "MED_TRP_4",
-    "do_code": "Handle11_MBOD_GWID_AANG_PSTD_HW",
-    "pieces": [
-      {
-        "name": "Handle11_MBOD_GWID_AANG_PSTD_HW",
-        "dxf_urls": [
-          "https://res.cloudinary.com/dtan5djei/raw/upload/v1761722498/dxf/TRP_4/Handle11_MBOD_GWID_AANG_PSTD_HW.dxf"
-        ]
-      }
-    ]
-  },
-  {
-    "model_code": "MED_TRP_4",
-    "do_code": "Handle12_MBOD_GWID_AANG_PSTD_HW",
-    "pieces": [
-      {
-        "name": "Handle12_MBOD_GWID_AANG_PSTD_HW",
-        "dxf_urls": [
-          "https://res.cloudinary.com/dtan5djei/raw/upload/v1761743148/dxf/TRP_4/Handle12_MBOD_GWID_AANG_PSTD_HW.dxf"
-        ]
-      }
-    ]
-  },
-  {
-    "model_code": "MED_TRP_4",
-    "do_code": "Handle13_MBOD_GWID_AANG_PSTD_HW_RSTR",
-    "pieces": [
-      {
-        "name": "Handle13_MBOD_GWID_AANG_PSTD_HW_RSTR",
-        "dxf_urls": [
-          [
-            "https://res.cloudinary.com/dtan5djei/raw/upload/v1761722500/dxf/TRP_4/Handle13_MBOD_GWID_AANG_PSTD_HW_RSTR.dxf"
-          ]
-        ]
-      }
-    ]
-  },
-  {
-    "model_code": "MED_TRP_4",
-    "do_code": "Handle06_MBOD_GSTD_ASTR_PABV",
-    "pieces": [
-      {
-        "name": "Handle06_MBOD_GSTD_ASTR_PABV",
-        "dxf_urls": [
-          [
-            "https://res.cloudinary.com/dtan5djei/raw/upload/v1761722495/dxf/TRP_4/Handle06_MBOD_GSTD_ASTR_PABV.dxf"
-          ]
-        ]
-      }
-    ]
-  },
-  {
-    "model_code": "MED_TRP_4",
-    "do_code": "Handle15_MBOD_GWID_AANG_PABV_RSTR",
-    "pieces": [
-      {
-        "name": "Handle15_MBOD_GWID_AANG_PABV_RSTR",
-        "dxf_urls": [
-          [
-            "https://res.cloudinary.com/dtan5djei/raw/upload/v1761722501/dxf/TRP_4/Handle15_MBOD_GWID_AANG_PABV_RSTR.dxf"
-          ]
-        ]
-      }
-    ]
-  },
-  {
-    "model_code": "MED_TRP_4",
-    "do_code": "Closure00",
-    "pieces": [
-      {
-        "name": "Closure00",
-        "dxf_urls": []
-      }
-    ]
-  },
-  {
-    "model_code": "MED_TRP_4",
-    "do_code": "Closure01_WINH",
-    "pieces": [
-      {
-        "name": "Closure01_WINH",
-        "dxf_urls": [
-          "https://res.cloudinary.com/dtan5djei/raw/upload/v1761722486/dxf/TRP_4/Closure01_WINH.dxf"
-        ]
-      }
-    ]
-  },
-  {
-    "model_code": "MED_TRP_4",
-    "do_code": "Closure02_CEN",
-    "pieces": [
-      {
-        "name": "Closure02_CEN",
-        "dxf_urls": [
-          "https://res.cloudinary.com/dtan5djei/raw/upload/v1761722487/dxf/TRP_4/Closure02_CEN.dxf"
-        ]
-      }
-    ]
-  },
-  {
-    "model_code": "MED_TRP_4",
-    "do_code": "Closure03_WINH",
-    "pieces": [
-      {
-        "name": "Closure03_WINH",
-        "dxf_urls": [
-          "https://res.cloudinary.com/dtan5djei/raw/upload/v1761722487/dxf/TRP_4/Closure03_WINH.dxf"
-        ]
-      }
-    ]
-  },
-  {
-    "model_code": "MED_TRP_4",
-    "do_code": "Closure04_CEN",
-    "pieces": [
-      {
-        "name": "Closure04_CEN",
-        "dxf_urls": [
-          "https://res.cloudinary.com/dtan5djei/raw/upload/v1761722488/dxf/TRP_4/Closure04_CEN.dxf"
-        ]
-      }
-    ]
-  },
-  {
-    "model_code": "MED_TRP_4",
-    "do_code": "Closure05_CEN",
-    "pieces": [
-      {
-        "name": "Closure05_CEN",
-        "dxf_urls": [
-          "https://res.cloudinary.com/dtan5djei/raw/upload/v1761722489/dxf/TRP_4/Closure05_CEN.dxf"
-        ]
-      }
-    ]
-  },
-  {
-    "model_code": "MED_TRP_4",
-    "do_code": "Closure06_CEN",
-    "pieces": [
-      {
-        "name": "Closure06_CEN",
-        "dxf_urls": [
-          "https://res.cloudinary.com/dtan5djei/raw/upload/v1761722490/dxf/TRP_4/Closure06_CEN.dxf"
-        ]
-      }
-    ]
-  },
-  {
-    "model_code": "MED_TRP_4",
-    "do_code": "FrontD00",
-    "pieces": [
-      {
-        "name": "FrontD00",
-        "dxf_urls": []
-      }
-    ]
-  },
-  {
-    "model_code": "MED_TRP_4",
-    "do_code": "FrontD04_HOR_BOT",
-    "pieces": [
-      {
-        "name": "FrontD04_HOR_BOT",
-        "dxf_urls": [
-          "https://res.cloudinary.com/dtan5djei/raw/upload/v1761722491/dxf/TRP_4/FrontD04_HOR_BOT.dxf"
-        ]
-      }
-    ]
-  },
-  {
-    "model_code": "MED_TRP_4",
-    "do_code": "FrontD07_HOR_BOT_THIN",
-    "pieces": [
-      {
-        "name": "FrontD07_HOR_BOT_THIN",
-        "dxf_urls": [
-          "https://res.cloudinary.com/dtan5djei/raw/upload/v1761722491/dxf/TRP_4/FrontD07_HOR_BOT_THIN.dxf"
-        ]
-      }
-    ]
-  },
-  {
-    "model_code": "MED_TRP_4",
-    "do_code": "FrontU00",
-    "pieces": [
-      {
-        "name": "FrontU00",
-        "dxf_urls": []
-      }
-    ]
-  },
-  {
-    "model_code": "MED_TRP_4",
-    "do_code": "FrontU02_TPAT_WSTD_SBOT_OMID",
-    "pieces": [
-      {
-        "name": "FrontU02_TPAT_WSTD_SBOT_OMID",
-        "dxf_urls": [
-          "https://res.cloudinary.com/dtan5djei/raw/upload/v1761722492/dxf/TRP_4/FrontU02_TPAT_WSTD_SBOT_OMID.dxf"
-        ]
-      }
-    ]
-  },
-  {
-    "model_code": "MED_TRP_4",
-    "do_code": "FrontU03_TFLA_WSTD_SBOT_OMID",
-    "pieces": [
-      {
-        "name": "FrontU03_TFLA_WSTD_SBOT_OMID",
-        "dxf_urls": [
-          "https://res.cloudinary.com/dtan5djei/raw/upload/v1761722493/dxf/TRP_4/FrontU03_TFLA_WSTD_SBOT_OMID.dxf"
-        ]
-      }
-    ]
-  },
-  {
-    "model_code": "MED_TRP_4",
-    "do_code": "FrontU09_TPAT_GUS",
-    "pieces": [
-      {
-        "name": "FrontU09_TPAT_GUS",
-        "dxf_urls": [
-          "https://res.cloudinary.com/dtan5djei/raw/upload/v1761722494/dxf/TRP_4/FrontU09_TPAT_GUS.dxf"
-        ]
-      }
-    ]
-  },
-  {
-    "model_code": "MED_TRP_4",
-    "do_code": "Strap00",
-    "pieces": [
-      {
-        "name": "Strap00",
-        "dxf_urls": []
-      }
-    ]
-  },
-  {
-    "model_code": "MED_TRP_4",
-    "do_code": "Strap01_WWID",
-    "pieces": [
-      {
-        "name": "Strap01_WWID",
-        "dxf_urls": [
-          "https://res.cloudinary.com/dtan5djei/raw/upload/v1761722505/dxf/TRP_4/Strap01_WWID.dxf"
-        ]
-      }
-    ]
-  },
-  {
-    "model_code": "MED_TRP_4",
-    "do_code": "Strap02_WSTD",
-    "pieces": [
-      {
-        "name": "Strap02_WSTD",
-        "dxf_urls": [
-          "https://res.cloudinary.com/dtan5djei/raw/upload/v1761722506/dxf/TRP_4/Strap02_WSTD.dxf"
-        ]
-      }
-    ]
-  },
-  {
-    "model_code": "MED_TRP_4",
-    "do_code": "Rear00",
-    "pieces": [
-      {
-        "name": "Rear00",
-        "dxf_urls": []
-      }
-    ]
-  },
-  {
-    "model_code": "MED_TRP_4",
-    "do_code": "Rear03_LUGSTD",
-    "pieces": [
-      {
-        "name": "Rear03_LUGSTD",
-        "dxf_urls": [
-          "https://res.cloudinary.com/dtan5djei/raw/upload/v1761722503/dxf/TRP_4/Rear03_LUGSTD.dxf"
-        ]
-      }
-    ]
-  },
-  {
-    "model_code": "MED_TRP_4",
-    "do_code": "Rear04_LUGWPAN",
-    "pieces": [
-      {
-        "name": "Rear04_LUGWPAN",
-        "dxf_urls": [
-          "https://res.cloudinary.com/dtan5djei/raw/upload/v1761722504/dxf/TRP_4/Rear04_LUGWPAN.dxf"
-        ]
-      }
-    ]
-  },
-  {
-    "model_code": "MED_TRP_4",
-    "do_code": "Add00",
-    "pieces": [
-      {
-        "name": "Add00",
-        "dxf_urls": []
-      }
-    ]
-  },
-  {
-    "model_code": "MED_TRP_4",
-    "do_code": "Add01_TABRIV",
-    "pieces": [
-      {
-        "name": "Add01_TABRIV",
-        "dxf_urls": []
-      }
-    ]
-  },
-  {
-    "model_code": "MED_TRP_4",
-    "do_code": "Add02_CHASTR",
-    "pieces": [
-      {
-        "name": "Add02_CHASTR",
-        "dxf_urls": []
-      }
-    ]
-  },
-  {
-    "model_code": "MED_TRP_4",
-    "do_code": "Add03_FEET",
-    "pieces": [
-      {
-        "name": "Add03_FEET",
-        "dxf_urls": []
-      }
-    ]
+  "layerPresets": {
+    "Style": {
+      "Style06_TRP_WSTD_GANG": [
+        "0STY_DO6_BAC_3",
+        "0STY_DO6_BAC_3_E",
+        "0STY_DO6_BAC_3_S",
+        "0STY_DO6_BOT_1",
+        "0STY_DO6_BOT_1_E",
+        "0STY_DO6_BOT_1_S",
+        "0STY_DO6_FRO_2",
+        "0STY_DO6_FRO_2_E",
+        "0STY_DO6_FRO_2_S",
+        "0STY_DO6_GL_5",
+        "0STY_DO6_GL_5_E",
+        "0STY_DO6_GL_5_S",
+        "0STY_DO6_GR_4",
+        "0STY_DO6_GR_4_E",
+        "0STY_DO6_GR_4_S",
+        "2CLO_DO1_1.1",
+        "2CLO_DO1_1.2",
+        "2CLO_DO1_1.2_E",
+        "2CLO_DO1_1.2_S",
+        "2CLO_DO1_1.3",
+        "2CLO_DO1_1.3_E",
+        "2CLO_DO1_1.3_S",
+        "HW_9"
+      ]
+    },
+    "Handle": {
+      "Handle00": [],
+      "Handle09_MBOD_GWID_AANG_PHIG_NT": [
+        "1HAN_DO12",
+        "1HAN_DO12_E",
+        "1HAN_DO12_S"
+      ],
+      "Handle10_MBOD_GWID_AANG_PHIG_NT": [
+        "1HAN_DO13",
+        "1HAN_DO13_E",
+        "1HAN_DO13_S"
+      ],
+      "Handle11_MBOD_GWID_AANG_PSTD_HW": [
+        "1HAN_DO14",
+        "1HAN_DO14_E",
+        "1HAN_DO14_S",
+        "1HAN_DO17",
+        "1HAN_DO17_E",
+        "1HAN_DO17_S",
+        "HW_1"
+      ],
+      "Handle12_MBOD_GWID_AANG_PSTD_HW": [
+        "HW_2",
+        "1HAN_DO15",
+        "1HAN_DO15_E",
+        "1HAN_DO15_S",
+        "1HAN_DO17",
+        "1HAN_DO17_E",
+        "1HAN_DO17_S"
+      ],
+      "Handle13_MBOD_GWID_AANG_PSTD_HW_RSTR": [
+        "HW_3",
+        "1HAN_DO16",
+        "1HAN_DO16_E",
+        "1HAN_DO16_S",
+        "1HAN_DO17",
+        "1HAN_DO17_E",
+        "1HAN_DO17_S"
+      ],
+      "Handle06_MBOD_GSTD_ASTR_PABV": [
+        "1HAN_DO18",
+        "1HAN_DO18_E",
+        "1HAN_DO18_S"
+      ],
+      "Handle15_MBOD_GWID_AANG_PABV_RSTR": [
+        "1HAN_DO19",
+        "1HAN_DO19_E",
+        "1HAN_DO19_S"
+      ]
+    },
+    "Flap": {
+      "Closure00": [],
+      "Closure01_WINH": ["2CLO_DO2", "2CLO_DO2_E", "2CLO_DO2_S"],
+      "Closure02_CEN": ["2CLO_DO3", "2CLO_DO3_E", "2CLO_DO3_S"],
+      "Closure03_WINH": [
+        "2CLO_DO4_11",
+        "2CLO_DO4_11_E",
+        "2CLO_DO4_11_S",
+        "2CLO_DO4_12",
+        "2CLO_DO4_12_E",
+        "2CLO_DO4_12_S"
+      ],
+      "Closure04_CEN": ["2CLO_DO5", "2CLO_DO5_E", "2CLO_DO5_S"],
+      "Closure05_CEN": ["2CLO_DO6", "2CLO_DO6_E", "2CLO_DO6_S"],
+      "Closure06_CEN": ["2CLO_DO7", "2CLO_DO7_E", "2CLO_DO7_S", "HW_5"]
+    },
+    "Front Decor": {
+      "FrontD00": [],
+      "FrontD07_HOR_BOT_THIN": ["3FRO_DO22", "3FRO_DO22_E", "3FRO_DO22_S"],
+      "FrontD04_HOR_BOT": ["3FRO_DO23", "3FRO_DO23_E", "3FRO_DO23_S"]
+    },
+    "Front Utility": {
+      "FrontU00": [],
+      "FrontU02_TPAT_WSTD_SBOT_OMID": [
+        "3FRO_DO18",
+        "3FRO_DO18_E",
+        "3FRO_DO18_S"
+      ],
+      "FrontU03_TFLA_WSTD_SBOT_OMID": [
+        "3FRO_DO18",
+        "3FRO_DO18_E",
+        "3FRO_DO18_S",
+        "3FRO_DO19",
+        "3FRO_DO19_E",
+        "3FRO_DO19_S",
+        "HW_12"
+      ],
+      "FrontU09_TPAT_GUS": ["3FRO_DO24", "3FRO_DO24_E", "3FRO_DO24_S"]
+    },
+    "Straps": {
+      "Strap00": [],
+      "Strap01_WWID": [
+        "4STR_D01",
+        "4STR_D01_E",
+        "4STR_D01_S",
+        "4STR_D01_2",
+        "4STR_D01_2_E",
+        "HW_6",
+        "HW_8",
+        "HW_11"
+      ],
+      "Strap02_WSTD": [
+        "4STR_D01_2",
+        "4STR_D01_2_E",
+        "HW_8",
+        "4STR_D02",
+        "4STR_D02_E",
+        "4STR_D02_S",
+        "HW_7",
+        "HW_10"
+      ]
+    },
+    "Rear": {
+      "Rear00": [],
+      "Rear03_LUGSTD": ["5REA_DO6", "5REA_DO6_E", "5REA_DO6_S"],
+      "Rear04_LUGWPAN": ["5REA_DO5", "5REA_DO5_E", "5REA_DO5_S"]
+    },
+    "Add-ons": {
+      "Add00": [],
+      "Add01_TABRIV": ["6ADD_D01"],
+      "Add02_CHASTR": ["6ADD_D02"],
+      "Add03_FEET": ["HW_13"]
+    }
   }
-]
+}

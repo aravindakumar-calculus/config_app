@@ -22,7 +22,7 @@ export default function Header() {
   const isHome = pathname === "/";
 
   return (
-    <nav className="bg-white px-8 py-4 shadow flex items-center border-1 border-gray-300">
+    <nav className="bg-white px-8 py-4 shadow flex items-center border border-gray-300">
       {/* Left: Design Module Button */}
       <div className="flex items-center basis-1/4">
         {!isHome && (

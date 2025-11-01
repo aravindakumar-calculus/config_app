@@ -1,11 +1,8 @@
 {
-  "_id": {
-    "$oid": "690410c521779d5a14818b5a"
-  },
-  "name": "MED_TRP_1",
+  "name": "MED_TRP_3",
   "doOptions": {
     "style": {
-      "Style01_TRP_WSTD_GFUS": [
+      "Style06_TRP_WSTD_GANG": [
         "Style_Production_Notes",
         "Style_Production_Notes",
         "Style_Production_Notes"
@@ -17,32 +14,37 @@
         "No Handle_Production_Notes",
         "No Handle_Production_Notes"
       ],
-      "Handle01_MBOD_GSTD_ASTR_PHIG_NT": [
-        "Handle_Production_Notes",
-        "Handle_Production_Notes",
-        "Handle_Production_Notes"
-      ],
-      "Handle02_MBOD_GSTD_ASTR_PHIG_NT": [
-        "Handle_Production_Notes",
-        "Handle_Production_Notes",
-        "Handle_Production_Notes"
-      ],
-      "Handle03_MBOD_GSTD_ASTR_PSTD_HW": [
-        "Handle_Production_Notes",
-        "Handle_Production_Notes",
-        "Handle_Production_Notes"
-      ],
-      "Handle04_MBOD_GSTD_ASTR_PSTD_HW": [
-        "Handle_Production_Notes",
-        "Handle_Production_Notes",
-        "Handle_Production_Notes"
-      ],
-      "Handle05_MBOD_GSTD_ASTR_PSTD_HW_RSTR": [
-        "Handle_Production_Notes",
-        "Handle_Production_Notes",
-        "Handle_Production_Notes"
-      ],
       "Handle06_MBOD_GSTD_ASTR_PABV": [
+        "No Handle_Production_Notes",
+        "No Handle_Production_Notes",
+        "No Handle_Production_Notes"
+      ],
+      "Handle09_MBOD_GWID_AANG_PHIG_NT": [
+        "Handle_Production_Notes",
+        "Handle_Production_Notes",
+        "Handle_Production_Notes"
+      ],
+      "Handle10_MBOD_GWID_AANG_PHIG_NT": [
+        "Handle_Production_Notes",
+        "Handle_Production_Notes",
+        "Handle_Production_Notes"
+      ],
+      "Handle11_MBOD_GWID_AANG_PSTD_HW": [
+        "Handle_Production_Notes",
+        "Handle_Production_Notes",
+        "Handle_Production_Notes"
+      ],
+      "Handle12_MBOD_GWID_AANG_PSTD_HW": [
+        "Handle_Production_Notes",
+        "Handle_Production_Notes",
+        "Handle_Production_Notes"
+      ],
+      "Handle13_MBOD_GWID_AANG_PSTD_HW_RSTR": [
+        "Handle_Production_Notes",
+        "Handle_Production_Notes",
+        "Handle_Production_Notes"
+      ],
+      "Handle15_MBOD_GWID_AANG_PABV_RSTR": [
         "Handle_Production_Notes",
         "Handle_Production_Notes",
         "Handle_Production_Notes"
@@ -83,11 +85,6 @@
         "Closure_Production_Notes",
         "Closure_Production_Notes",
         "Closure_Production_Notes"
-      ],
-      "Closure07_GAP": [
-        "Closure_Production_Notes",
-        "Closure_Production_Notes",
-        "Closure_Production_Notes"
       ]
     },
     "Front Decor": {
@@ -96,17 +93,12 @@
         "No FrontDecor_Production_Notes",
         "No FrontDecor_Production_Notes"
       ],
-      "FrontD01_VER_CEN": [
+      "FrontD04_HOR_BOT": [
         "FrontDecor_Production_Notes",
         "FrontDecor_Production_Notes",
         "FrontDecor_Production_Notes"
       ],
-      "FrontD02_BCOR": [
-        "FrontDecor_Production_Notes",
-        "FrontDecor_Production_Notes",
-        "FrontDecor_Production_Notes"
-      ],
-      "FrontD03_CSTI": [
+      "FrontD07_HOR_BOT_THIN": [
         "FrontDecor_Production_Notes",
         "FrontDecor_Production_Notes",
         "FrontDecor_Production_Notes"
@@ -118,11 +110,6 @@
         "No FrontUtility_Production_Notes",
         "No FrontUtility_Production_Notes"
       ],
-      "FrontU01_TPAT_WSTD_FBOT_OMID": [
-        "FrontUtility_Production_Notes",
-        "FrontUtility_Production_Notes",
-        "FrontUtility_Production_Notes"
-      ],
       "FrontU02_TPAT_WSTD_SBOT_OMID": [
         "FrontUtility_Production_Notes",
         "FrontUtility_Production_Notes",
@@ -133,17 +120,7 @@
         "FrontUtility_Production_Notes",
         "FrontUtility_Production_Notes"
       ],
-      "FrontU04_TFLA_WSTD_FBOT_OMID": [
-        "FrontUtility_Production_Notes",
-        "FrontUtility_Production_Notes",
-        "FrontUtility_Production_Notes"
-      ],
-      "FrontU05_TPAT_WRUN_FBOT_OHIG": [
-        "FrontUtility_Production_Notes",
-        "FrontUtility_Production_Notes",
-        "FrontUtility_Production_Notes"
-      ],
-      "FrontU06_TPAT_WRUN_FBOT_OMID": [
+      "FrontU09_TPAT_GUS": [
         "FrontUtility_Production_Notes",
         "FrontUtility_Production_Notes",
         "FrontUtility_Production_Notes"
@@ -171,16 +148,6 @@
         "No Rear_Production_Notes",
         "No Rear_Production_Notes",
         "No Rear_Production_Notes"
-      ],
-      "Rear01_LUGBRO": [
-        "Rear_Production_Notes",
-        "Rear_Production_Notes",
-        "Rear_Production_Notes"
-      ],
-      "Rear02_LUGBPOC": [
-        "Rear_Production_Notes",
-        "Rear_Production_Notes",
-        "Rear_Production_Notes"
       ],
       "Rear03_LUGSTD": [
         "Rear_Production_Notes",

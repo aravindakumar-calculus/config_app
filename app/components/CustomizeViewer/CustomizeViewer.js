@@ -107,7 +107,7 @@ export default function CustomizeViewer() {
       <DETabs />
       <div
         ref={scrollRef}
-        className="flex flex-col justify-between flex-grow overflow-y-auto"
+        className="flex flex-col justify-between grow overflow-y-auto"
       >
         <div className="flex flex-col gap-4">
           {selectedTab === "Style" ? (
